@@ -1,0 +1,1 @@
+[{"title":"Nintendo Switch","price":200,"thumbnail":"https://www.atajo.com.ar/images/00000HAD-S-KABAA65619HAD-S-KABAA-Consola-Nintendo-Switch-Neon-01.jpg","id":1},{"title":"Meta Quest 2","price":600,"thumbnail":"https://m.media-amazon.com/images/I/61tE7IcuLmL._SL1500_.jpg","id":3}]
