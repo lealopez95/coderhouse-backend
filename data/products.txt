@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Nintendo Switch",
+        "price": 200,
+        "thumbnail": "https://www.atajo.com.ar/images/00000HAD-S-KABAA65619HAD-S-KABAA-Consola-Nintendo-Switch-Neon-01.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Attack on titan computer case",
+        "price": 80,
+        "thumbnail": "https://ae01.alicdn.com/kf/H198a206a928b4c6d845f62dcf81ff377W/Pegatinas-de-Anime-de-Attack-on-Titan-para-funda-de-PC-calcoman-a-de-decoraci-n.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Meta Quest 2",
+        "price": 600,
+        "thumbnail": "https://m.media-amazon.com/images/I/61tE7IcuLmL._SL1500_.jpg"
+    }
+]
