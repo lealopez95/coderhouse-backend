@@ -1,10 +1,16 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const apiRoutes = require('./routers/app.routers')
-const { products } = require('./data/data');
+const { Server: HttpServer } = require('http');
+const { Server: IOServer } = require('socket.io');
+
 
 const app = express();
+const httpServer = new HttpServer(app);
+const io = new IOServer(httpServer);
+
 app.engine(
     'hbs',
     engine({
@@ -31,8 +37,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-    let productsResponse = [...products];
-    res.render('products', { products: productsResponse });
+    fetch(`http://localhost:${PORT}/products.json`)
+    .then( response => response.json())
+    .then( products => {
+        res.render('products', { products });
+    });
 });
 
 app.get('*', (request, response) => { // cae aca si no poasa ninguna regla de arriba
@@ -41,10 +50,28 @@ app.get('*', (request, response) => { // cae aca si no poasa ninguna regla de ar
 
 
 const PORT = process.env.PORT || 8080;
-const connectedServer = app.listen(PORT, () => {
+const connectedServer = httpServer.listen(PORT, () => {
     console.log(`Servidor activo y escuchando en el puerto http://localhost:${PORT}`);
 });
 
 connectedServer.on('error', (error) => {
     console.log(error.message);
 });
+
+io.on('connection', (socket) => {
+    
+    console.log("Usuario conectado")
+    fetch(`http://localhost:${PORT}/products.json`)
+    .then( response => response.json())
+    .then( products => {
+        socket.emit('products', products);
+    });
+
+
+    socket.on('add-new-product', product => {
+        io.sockets.emit("add-new-product-complete", product)
+    });
+});
+
+
+

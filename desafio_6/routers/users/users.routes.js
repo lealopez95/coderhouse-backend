@@ -1,6 +1,5 @@
 const express = require('express');
-const { users } = require('../../data/data');
-
+const users = []
 
 const router = express.Router();
 
