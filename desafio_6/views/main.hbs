@@ -87,5 +87,30 @@
     <table id="products-list">
     </table>
 </div>
+<!-- Chat Form -->
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <div><h3 style="text-align: center; margin-top: 16px;"> Chat </h3></div>
+    <form onsubmit="return sendMessage();">
+        <div style="margin-bottom: 16px;">
+            <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                <label for="email"> Email: </label>
+                <br>
+                <input type="text" name="email" id="email" style="margin-bottom: 16px;" class="input-file" required>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                <label for="message"> Mensaje: </label>
+                <br>
+                <textarea name="message" id="message" cols="30" rows="10" style="margin-bottom: 16px;" class="input-file" required></textarea>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <input type="submit" value="Enviar" class="submit-button" >
+            </div>
+        </div>
+    </form>
+</div>
+<div class="chat-container">
+    <div id="chat-box">
+    </div>
+</div>
 
 <a href="/products">Ver productos</a>

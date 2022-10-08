@@ -286,6 +286,33 @@ nav {
   max-width: 2rem;
 }
 
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#chat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#chat-box p {
+  color: green;
+  font-style: italic;
+}
+
+#chat-box p > b.email  {
+  color: blue;
+  font-style: normal;
+}
+
+#chat-box p > span.timestamp  {
+  color: orange;
+  font-style: normal;
+}
+
 @media screen and (min-width: 800px) {
   .nav-center {
     max-width: 1170px;

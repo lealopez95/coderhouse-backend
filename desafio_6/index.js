@@ -60,17 +60,28 @@ connectedServer.on('error', (error) => {
 
 io.on('connection', (socket) => {
     
-    console.log("Usuario conectado")
     fetch(`http://localhost:${PORT}/products.json`)
     .then( response => response.json())
     .then( products => {
         socket.emit('products', products);
     });
 
+    fetch(`http://localhost:${PORT}/messages.json`)
+    .then( response => response.json())
+    .then( messages => {
+        socket.emit('messages', messages);
+    });
+
 
     socket.on('add-new-product', product => {
         io.sockets.emit("add-new-product-complete", product)
     });
+
+    socket.on('add-new-message', message => {
+        io.sockets.emit("add-new-message-complete", message)
+    });
+
+    
 });
 
 
