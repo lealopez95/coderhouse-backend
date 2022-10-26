@@ -1,0 +1,24 @@
+{
+  "name": "mysql_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "migration-make": "knex migrate:make",
+    "migration-run": "knex migrate:up",
+    "migration-rollback": "knex migrate:rollback"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.1.2",
+    "express-handlebars": "^6.0.6",
+    "node-fetch": "^3.2.10",
+    "socket.io": "^4.5.2"
+  }
+}
