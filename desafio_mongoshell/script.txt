@@ -261,10 +261,10 @@
 }
 
 4) {
-    db.products.find().count()
+    db.products.estimatedDocumentCount()
     10
 
-    db.messages.find().count()
+    db.messages.estimatedDocumentCount()
     10
 }
 
@@ -359,7 +359,7 @@
         }
 
         iv) {
-            db.products.find().sort({price: 1}).limit(3).toArray()[2]
+            db.products.find().sort({price: 1}).skip(2).limit(1)
 
 
             {
@@ -431,7 +431,7 @@
     results ====>
     { ok: 1 }
 
-    
+
 
 }
 
