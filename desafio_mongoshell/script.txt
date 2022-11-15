@@ -1,0 +1,437 @@
+1 y 2 {
+
+    use ecommerce
+    ===========================
+    crear mensajes:
+
+
+
+
+    db.messages.insertMany([
+        {
+            email: "leandro.lopez@gmail.com",
+            message: "Hola que tal?",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "other.guy@gmail.com",
+            message: "todo bien, vos?",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "leandro.lopez@gmail.com",
+            message: "bien bien, que hacias?",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "other.guy@gmail.com",
+            message: "nada, vos?",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "leandro.lopez@gmail.com",
+            message: "aca, poniendome al dia con coder",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "other.guy@gmail.com",
+            message: "te falta mucho?",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "leandro.lopez@gmail.com",
+            message: "la verdad que si, al menos unas 4 clases",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "other.guy@gmail.com",
+            message: "que mal, espero te pongas al dia rapido",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "leandro.lopez@gmail.com",
+            message: "si yo tambien. Te dejo que tengo que seguir con el desafio de mongo",
+            timestamp: new Timestamp()
+        },
+        {
+            email: "other.guy@gmail.com",
+            message: "nos vemos",
+            timestamp: new Timestamp()
+        }
+    ])
+
+    =====================
+    resultado de la query de arriba
+    { acknowledged: true,
+    insertedIds: 
+    { '0': ObjectId("6372dd1f3bb6e65c27af1538"),
+        '1': ObjectId("6372dd1f3bb6e65c27af1539"),
+        '2': ObjectId("6372dd1f3bb6e65c27af153a"),
+        '3': ObjectId("6372dd1f3bb6e65c27af153b"),
+        '4': ObjectId("6372dd1f3bb6e65c27af153c"),
+        '5': ObjectId("6372dd1f3bb6e65c27af153d"),
+        '6': ObjectId("6372dd1f3bb6e65c27af153e"),
+        '7': ObjectId("6372dd1f3bb6e65c27af153f"),
+        '8': ObjectId("6372dd1f3bb6e65c27af1540"),
+        '9': ObjectId("6372dd1f3bb6e65c27af1541") } }
+    =====================
+
+    crear productos:
+
+
+
+    db.products.insertMany([
+        {
+            name: "product 1",
+            description: "descripcion 1",
+            price: 120,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 2",
+            description: "descripcion 2",
+            price: 580,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 3",
+            description: "descripcion 3",
+            price: 900,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 4",
+            description: "descripcion 4",
+            price: 1280,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 5",
+            description: "descripcion 5",
+            price: 1700,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 6",
+            description: "descripcion 6",
+            price: 2300,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 7",
+            description: "descripcion 7",
+            price: 2860,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 8",
+            description: "descripcion 8",
+            price: 3350,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 9",
+            description: "descripcion 9",
+            price: 4320,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+        {
+            name: "product 10",
+            description: "descripcion 10",
+            price: 4990,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        },
+    ])
+    =======================
+    resultados de la query
+
+
+    { acknowledged: true,
+    insertedIds: 
+    { '0': ObjectId("6372de7b3bb6e65c27af1542"),
+        '1': ObjectId("6372de7b3bb6e65c27af1543"),
+        '2': ObjectId("6372de7b3bb6e65c27af1544"),
+        '3': ObjectId("6372de7b3bb6e65c27af1545"),
+        '4': ObjectId("6372de7b3bb6e65c27af1546"),
+        '5': ObjectId("6372de7b3bb6e65c27af1547"),
+        '6': ObjectId("6372de7b3bb6e65c27af1548"),
+        '7': ObjectId("6372de7b3bb6e65c27af1549"),
+        '8': ObjectId("6372de7b3bb6e65c27af154a"),
+        '9': ObjectId("6372de7b3bb6e65c27af154b") } }
+    =======================
+}
+
+3) {
+    db.messages.find()
+
+    { _id: ObjectId("6372dd1f3bb6e65c27af1538"),
+    email: 'leandro.lopez@gmail.com',
+    message: 'Hola que tal?',
+    timestamp: Timestamp({ t: 1668472095, i: 1 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af1539"),
+    email: 'other.guy@gmail.com',
+    message: 'todo bien, vos?',
+    timestamp: Timestamp({ t: 1668472095, i: 2 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153a"),
+    email: 'leandro.lopez@gmail.com',
+    message: 'bien bien, que hacias?',
+    timestamp: Timestamp({ t: 1668472095, i: 3 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153b"),
+    email: 'other.guy@gmail.com',
+    message: 'nada, vos?',
+    timestamp: Timestamp({ t: 1668472095, i: 4 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153c"),
+    email: 'leandro.lopez@gmail.com',
+    message: 'aca, poniendome al dia con coder',
+    timestamp: Timestamp({ t: 1668472095, i: 5 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153d"),
+    email: 'other.guy@gmail.com',
+    message: 'te falta mucho?',
+    timestamp: Timestamp({ t: 1668472095, i: 6 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153e"),
+    email: 'leandro.lopez@gmail.com',
+    message: 'la verdad que si, al menos unas 4 clases',
+    timestamp: Timestamp({ t: 1668472095, i: 7 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af153f"),
+    email: 'other.guy@gmail.com',
+    message: 'que mal, espero te pongas al dia rapido',
+    timestamp: Timestamp({ t: 1668472095, i: 8 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af1540"),
+    email: 'leandro.lopez@gmail.com',
+    message: 'si yo tambien. Te dejo que tengo que seguir con el desafio de mongo',
+    timestamp: Timestamp({ t: 1668472095, i: 9 }) }
+    { _id: ObjectId("6372dd1f3bb6e65c27af1541"),
+    email: 'other.guy@gmail.com',
+    message: 'nos vemos',
+    timestamp: Timestamp({ t: 1668472095, i: 10 }) }
+    ==================================================================
+
+    ==================================================================
+    db.products.find()
+    { _id: ObjectId("6372de7b3bb6e65c27af1542"),
+    name: 'product 1',
+    description: 'descripcion 1',
+    price: 120,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1543"),
+    name: 'product 2',
+    description: 'descripcion 2',
+    price: 580,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1544"),
+    name: 'product 3',
+    description: 'descripcion 3',
+    price: 900,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1545"),
+    name: 'product 4',
+    description: 'descripcion 4',
+    price: 1280,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1546"),
+    name: 'product 5',
+    description: 'descripcion 5',
+    price: 1700,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1547"),
+    name: 'product 6',
+    description: 'descripcion 6',
+    price: 2300,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1548"),
+    name: 'product 7',
+    description: 'descripcion 7',
+    price: 2860,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af1549"),
+    name: 'product 8',
+    description: 'descripcion 8',
+    price: 3350,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af154a"),
+    name: 'product 9',
+    description: 'descripcion 9',
+    price: 4320,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+    { _id: ObjectId("6372de7b3bb6e65c27af154b"),
+    name: 'product 10',
+    description: 'descripcion 10',
+    price: 4990,
+    image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+}
+
+4) {
+    db.products.find().count()
+    10
+
+    db.messages.find().count()
+    10
+}
+
+5) {
+    a) {
+        db.products.insertOne({
+            name: "product 11",
+            description: "descripcion 11",
+            price: 1100,
+            image: "https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg"
+        })
+
+
+        ==========>
+        { acknowledged: true,
+        insertedId: ObjectId("6372e10a3bb6e65c27af154c") }
+    }
+
+    b) {
+        i) {
+            db.products.find({price: {$lt: 1000}})
+
+
+            { _id: ObjectId("6372de7b3bb6e65c27af1542"),
+            name: 'product 1',
+            description: 'descripcion 1',
+            price: 120,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af1543"),
+            name: 'product 2',
+            description: 'descripcion 2',
+            price: 580,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af1544"),
+            name: 'product 3',
+            description: 'descripcion 3',
+            price: 900,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+        }
+
+        ii) {
+            db.products.find({price: {$gt: 1000, $lt:3000}})
+
+
+            { _id: ObjectId("6372de7b3bb6e65c27af1545"),
+            name: 'product 4',
+            description: 'descripcion 4',
+            price: 1280,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af1546"),
+            name: 'product 5',
+            description: 'descripcion 5',
+            price: 1700,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af1547"),
+            name: 'product 6',
+            description: 'descripcion 6',
+            price: 2300,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af1548"),
+            name: 'product 7',
+            description: 'descripcion 7',
+            price: 2860,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372e10a3bb6e65c27af154c"),
+            name: 'product 11',
+            description: 'descripcion 11',
+            price: 1100,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+        }
+
+        iii) {
+            db.products.find({price: {$gt: 3000}})
+
+
+
+            { _id: ObjectId("6372de7b3bb6e65c27af1549"),
+            name: 'product 8',
+            description: 'descripcion 8',
+            price: 3350,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af154a"),
+            name: 'product 9',
+            description: 'descripcion 9',
+            price: 4320,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+            { _id: ObjectId("6372de7b3bb6e65c27af154b"),
+            name: 'product 10',
+            description: 'descripcion 10',
+            price: 4990,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg' }
+        }
+
+        iv) {
+            db.products.find().sort({price: 1}).limit(3).toArray()[2]
+
+
+            {
+            _id: ObjectId("6372de7b3bb6e65c27af1544"),
+            name: 'product 3',
+            description: 'descripcion 3',
+            price: 900,
+            image: 'https://codigoespagueti.com/wp-content/uploads/2022/10/chainsaw-man-pochita-humana-cosplay.jpg'
+            }
+        }
+    }
+
+    c) {
+        db.products.updateMany(
+            {},
+            {
+                $set: {
+                    stock: 100
+                }
+            }
+        )
+
+        results:
+        { acknowledged: true,
+        insertedId: null,
+        matchedCount: 11,
+        modifiedCount: 11,
+        upsertedCount: 0 }
+    }
+
+    d) {
+        db.products.updateMany(
+            {price: {$gt: 4000}},
+            {
+                $set: {
+                    stock: 0
+                }
+            }
+        )
+
+        results:
+        { acknowledged: true,
+        insertedId: null,
+        matchedCount: 2,
+        modifiedCount: 2,
+        upsertedCount: 0 }
+    }
+
+    e) {
+        db.products.deleteMany({price: {$lt: 1000}})
+
+        { acknowledged: true, deletedCount: 3 }
+    }
+
+}
+
+6) {
+    use admin
+
+    db.createUser(
+        {
+            user: "pepe",
+            pwd: "asd456",
+            roles: [
+                {role: "read", db: "ecommerce"}
+            ]
+        }
+    )
+    results ====>
+    { ok: 1 }
+
+    
+
+}
+
